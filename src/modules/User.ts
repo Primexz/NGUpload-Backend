@@ -3,15 +3,17 @@ import { APIUser } from 'discord-api-types/v10';
 import { SessionUser } from '../types/express-session.js';
 
 export class User {
-    constructor(readonly sessionUser: SessionUser) {}
+    user: SessionUser;
+    constructor(user: SessionUser) {
+        this.user = user;
+    }
 
     private async getRawInfo(): Promise<APIUser | null> {
         try {
             return (
                 await axios.get('https://discord.com/api/v10/users/@me', {
                     headers: {
-                        Authorization:
-                            'Bearer ' + this.sessionUser.access_token,
+                        Authorization: 'Bearer ' + this.user.access_token,
                     },
                 })
             ).data;

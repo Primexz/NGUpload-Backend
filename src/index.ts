@@ -48,7 +48,7 @@ app.all('*', (req, res, next) => {
 });
 
 //this middleware will handle our router results..
-app.use((err: RouterResultType, req, res, next) => {
+app.use((err: RouterResultType, req, res, _next) => {
     res.status(err.code).send(err);
 });
 

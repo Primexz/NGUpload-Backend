@@ -7,7 +7,7 @@ import {
 import { OAuth2 } from '../../modules/OAuth2.js';
 
 export default Router()
-    .get('/url', (req, res, next) => {
+    .get('/url', (req, res, _next) => {
         res.redirect(new OAuth2().getOAuth2Url());
     })
     .get('/callback', async (req, res, next) => {
