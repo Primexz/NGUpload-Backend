@@ -1,0 +1,19 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+    ci:
+        runs-on: ubuntu-latest
+        name: CI
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Check CMake version
+              run: yarn install
+
+            - name: Run eslint
+              run: yarn lint
+
+            - name: Build 64bit release DLL
+              run: yarn prettier . --check
