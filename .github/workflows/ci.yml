@@ -9,7 +9,7 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
-            - name: Check CMake version
+            - name: Install all modules
               run: yarn install
 
             - name: Run eslint
