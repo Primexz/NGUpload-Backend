@@ -1,16 +1,16 @@
+import connectRedis from 'connect-redis';
 import express from 'express';
-import config from './config.js';
-import baseRouter from './routes/index.js';
-import pretty from 'express-prettify';
 import fileUpload from 'express-fileupload';
+import pretty from 'express-prettify';
+import session from 'express-session';
+import { Redis } from 'ioredis';
+import morgan from 'morgan';
+import config from './config.js';
 import {
     RouterError,
     RouterResultType,
 } from './modules/express/RouterResult.js';
-import morgan from 'morgan';
-import connectRedis from 'connect-redis';
-import session from 'express-session';
-import { Redis } from 'ioredis';
+import baseRouter from './routes/index.js';
 const RedisStore = connectRedis(session);
 
 const app = express();

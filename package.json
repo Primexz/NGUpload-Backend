@@ -5,9 +5,10 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "lint": "npx eslint .",
-        "dev": "npx nodemon",
-        "build": "npx tsc",
+        "lint": "yarn eslint .",
+        "dev": "yarn nodemon",
+        "build": "yarn tsc",
+        "format": "yarn prettier --write .",
         "clean": "rm -rf dist"
     },
     "author": "Johann",
@@ -21,6 +22,7 @@
         "eslint-config-prettier": "^8.6.0",
         "nodemon": "^2.0.20",
         "prettier": "^2.8.4",
+        "prettier-plugin-organize-imports": "^3.2.2",
         "ts-node": "^10.9.1",
         "typescript": "^4.9.5"
     },

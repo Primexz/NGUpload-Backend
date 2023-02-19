@@ -1,6 +1,6 @@
+import axios from 'axios';
 import { APIUser } from 'discord-api-types/v10';
 import { SessionUser } from '../types/express-session.js';
-import axios from 'axios';
 
 export class User {
     constructor(readonly sessionUser: SessionUser) {}
