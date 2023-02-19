@@ -1,1 +1,1 @@
-# typescript-starter
+# NG Backend written in TypeScript
