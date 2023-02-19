@@ -1,22 +1,9 @@
 import { Router } from 'express';
-import { UploadedFile } from 'express-fileupload';
-import {
-    RouterError,
-    RouterResult,
-    RouterSuccess,
-} from '../modules/express/RouterResult.js';
-import { promises as fs } from 'fs';
+import oauth2Router from './oauth2/index.js';
+import userRouter from './user/index.js';
+import imageRouter from './images/index.js';
 
 export default Router()
-    .get('/test', (req, res, next) => {
-        next(new RouterResult(200, { test: 'test' }));
-    })
-    .put('/images', async (req, res, next) => {
-        const image: UploadedFile = <any>req.files?.image;
-        if (!image) return next(new RouterError(400, 'no image in payload'));
-
-        await fs.writeFile('./uploads/' + image.name, image.data);
-
-        await console.log('uploaded new image');
-        next(new RouterSuccess());
-    });
+    .use('/oauth2', oauth2Router)
+    .use('/user', userRouter)
+    .use('/images', imageRouter);

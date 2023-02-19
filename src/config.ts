@@ -20,4 +20,9 @@ export default {
     SERVER: {
         HTTP_PORT: loadEnvVariable('SERVER_PORT', '80'),
     },
+    OAUTH2: {
+        CLIENT_ID: loadEnvVariable('OAUTH2_CLIENT_ID'),
+        CLIENT_SECRET: loadEnvVariable('OAUTH2_CLIENT_SECRET'),
+        REDIRECT_URL: loadEnvVariable('OAUTH2_REDIRECT_URL'),
+    },
 };
