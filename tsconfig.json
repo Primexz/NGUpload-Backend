@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "nodenext",
+        "outDir": "dist",
+        "rootDir": "src",
+        "target": "ESNext",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "ts-node": {
+        "esm": true
+    },
+    "exclude": ["dist", "node_modules"]
+}
