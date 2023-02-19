@@ -32,7 +32,7 @@ app.use(morgan('combined'));
 app.use(
     session({
         store: new RedisStore({ client: new Redis() }),
-        secret: '97pq3r8tgouazevfwgozg8ow87t48g7weifwg4p8gzif',
+        secret: config.SERVER.SESSION_SECRET,
         name: 'NG_SESSION',
         resave: true,
         saveUninitialized: true,

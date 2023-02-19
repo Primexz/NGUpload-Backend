@@ -19,6 +19,7 @@ function loadEnvVariable(variable: string, fallback?: string): string {
 export default {
     SERVER: {
         HTTP_PORT: loadEnvVariable('SERVER_PORT', '80'),
+        SESSION_SECRET: loadEnvVariable('SESSION_SECRET'),
     },
     OAUTH2: {
         CLIENT_ID: loadEnvVariable('OAUTH2_CLIENT_ID'),
